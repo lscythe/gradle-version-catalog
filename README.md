@@ -2,7 +2,7 @@
 
 [![Main CI](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml)
 [![Security](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml)
-![Maven Central Version](https://img.shields.io/maven-central/v/dev.lscythe.tool/versions-androidx)
+[![Maven Central Version](https://img.shields.io/maven-central/v/dev.lscythe.tool/versions-androidx)](https://central.sonatype.com/search?q=g:dev.lscythe.tool)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1.0-blue.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
