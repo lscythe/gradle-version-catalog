@@ -1,7 +1,7 @@
 # Lscythe Version Catalogs
 
 [![Main CI](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml)
-[![Security](https://github.com/lscythe/gradle-version-catalog/actions/workflows/security.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalog/actions/workflows/security.yml)
+[![Security](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml)
 ![Maven Central Version](https://img.shields.io/maven-central/v/dev.lscythe.tool/versions-androidx)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1.0-blue.svg)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
