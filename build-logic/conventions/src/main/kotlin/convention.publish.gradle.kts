@@ -1,5 +1,6 @@
 plugins {
     id("com.vanniktech.maven.publish")
+    `maven-publish`
 }
 
 val version = providers.environmentVariable("VERSION")
@@ -16,7 +17,7 @@ mavenPublishing {
     pom {
         name.set(project.name)
         description.set(project.description ?: "Lscythe Version Catalog")
-        url.set("https://github.com/lscythe/version-catalog")
+        url.set("https://github.com/lscythe/gradle-version-catalog")
         inceptionYear.set("2025")
         
         licenses {
@@ -34,9 +35,23 @@ mavenPublishing {
         }
         
         scm {
-            url.set("https://github.com/lscythe/version-catalog")
-            connection.set("scm:git:git://github.com/lscythe/version-catalog.git")
-            developerConnection.set("scm:git:ssh://git@github.com/lscythe/version-catalog.git")
+            url.set("https://github.com/lscythe/gradle-version-catalog")
+            connection.set("scm:git:git://github.com/lscythe/gradle-version-catalog.git")
+            developerConnection.set("scm:git:ssh://git@github.com/lscythe/gradle-version-catalog.git")
         }
     }
 }
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/lscythe/gradle-version-catalogs")
+            credentials {
+                username = providers.environmentVariable("GITHUB_ACTOR").orNull
+                password = providers.environmentVariable("GITHUB_TOKEN").orNull
+            }
+        }
+    }
+}
+
