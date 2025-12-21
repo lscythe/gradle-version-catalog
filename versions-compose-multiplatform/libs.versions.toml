@@ -1,0 +1,68 @@
+# Trankuil Compose Multiplatform Version Catalog
+# JetBrains Compose for Kotlin Multiplatform
+[versions]
+coil = "3.3.0"
+compose = "1.9.3"
+lifecycle = "2.9.6"
+navigation = "2.9.1"
+
+[libraries]
+# Animation
+animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose" }
+animation-core = { module = "org.jetbrains.compose.animation:animation-core", version.ref = "compose" }
+# Coil (Multiplatform image loading)
+coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
+# Components
+components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
+components-ui-tooling-preview = { module = "org.jetbrains.compose.components:components-ui-tooling-preview", version.ref = "compose" }
+# Foundation
+foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
+foundation-layout = { module = "org.jetbrains.compose.foundation:foundation-layout", version.ref = "compose" }
+lifecycle-runtime = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+# Lifecycle
+lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+# Material (legacy)
+material = { module = "org.jetbrains.compose.material:material", version.ref = "compose" }
+material-icons-core = { module = "org.jetbrains.compose.material:material-icons-core", version.ref = "compose" }
+material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "compose" }
+# Material3
+material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose" }
+material3-adaptive = { module = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "compose" }
+# Navigation
+navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
+# Runtime
+runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
+runtime-saveable = { module = "org.jetbrains.compose.runtime:runtime-saveable", version.ref = "compose" }
+# UI
+ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
+ui-text = { module = "org.jetbrains.compose.ui:ui-text", version.ref = "compose" }
+ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "compose" }
+ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose" }
+ui-util = { module = "org.jetbrains.compose.ui:ui-util", version.ref = "compose" }
+
+[bundles]
+coil = [
+    "coil",
+    "coil-network-ktor",
+]
+core = [
+    "foundation",
+    "runtime",
+    "ui",
+    "ui-graphics",
+    "ui-tooling-preview",
+]
+lifecycle = [
+    "lifecycle-runtime",
+    "lifecycle-viewmodel",
+]
+material3 = [
+    "material-icons-core",
+    "material3",
+]
+
+[plugins]
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = "org.jetbrains.kotlin.plugin.compose:2.3.0"
