@@ -19,7 +19,7 @@ github_repository_url="https://github.com/lscythe/gradle-version-catalog"
 
 #region Utils
 function get_last_version() {
-  git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//' || echo "0.0.0"
+  git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0"
 }
 
 function diff_link() {
@@ -51,7 +51,7 @@ fi
 # Handle same-day releases
 if [[ "$last_version" == "$version" ]]; then
   patch=1
-  while git rev-parse "v$version.$patch" >/dev/null 2>&1; do
+  while git rev-parse "$version.$patch" >/dev/null 2>&1; do
     ((patch++))
   done
   version="$version.$patch"
@@ -84,11 +84,11 @@ if [[ -f "$changelog" ]]; then
   
   # Update diff links
   if grep -q "^\[unreleased\]:" "$changelog"; then
-    sed -i".bak" "s|\[unreleased\]:.*|\[unreleased\]: $(diff_link "v$version" "main")|" "$changelog"
+    sed -i".bak" "s|\[unreleased\]:.*|\[unreleased\]: $(diff_link "$version" "main")|" "$changelog"
     
     # Add version link if not exists
     if ! grep -q "^\[$version\]:" "$changelog"; then
-      echo "[$version]: $(diff_link "v$last_version" "v$version")" >> "$changelog"
+      echo "[$version]: $(diff_link "$last_version" "$version")" >> "$changelog"
     fi
     rm -f "$changelog.bak"
     echo "✅ Updated diff links in CHANGELOG.md"
@@ -102,7 +102,7 @@ git diff --stat
 
 # 4. Ask for confirmation
 echo
-echo "Do you want to commit the changes and create release tag v$version?"
+echo "Do you want to commit the changes and create release tag $version?"
 echo "The tag push will trigger the publish workflow on CI."
 read -p "Enter 'yes' to continue: " -r input
 if [[ "$input" != "yes" ]]; then
@@ -115,16 +115,16 @@ fi
 echo
 echo "⏳ Creating release..."
 git add -A
-git commit --quiet --message "release: v$version"
-git tag "v$version" -m "Release v$version"
-echo "✅ Created tag v$version"
+git commit --quiet --message "release: $version"
+git tag "$version" -m "Release $version"
+echo "✅ Created tag $version"
 
 # 6. Push
 echo "⏳ Pushing to remote..."
 git push --quiet origin HEAD
-git push --quiet origin "v$version"
+git push --quiet origin "$version"
 echo
 echo "🎉 DONE!"
 echo
 echo "📦 Release will be published automatically via GitHub Actions."
-echo "🔗 View release: $github_repository_url/releases/tag/v$version"
+echo "🔗 View release: $github_repository_url/releases/tag/$version"
