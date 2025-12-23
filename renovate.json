@@ -1,13 +1,14 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:recommended"
+        "config:recommended",
+        ":disableDependencyDashboard"
     ],
     "labels": [
         "dependencies"
     ],
     "schedule": [
-        "before 9am on monday"
+        "* * * * 0,6"
     ],
     "timezone": "Asia/Jakarta",
     "packageRules": [
@@ -22,7 +23,12 @@
             "semanticCommitType": "deps",
             "matchPackageNames": [
                 "*"
-            ]
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "autoMerge": true
         },
         {
             "matchManagers": [
