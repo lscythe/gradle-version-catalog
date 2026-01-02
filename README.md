@@ -172,7 +172,7 @@ plugins {
 
 ## Versioning
 
-Published versions match git tags. Creating a tag `v1.0.0` publishes version `1.0.0`.
+Published versions match git tags. Creating a tag `2025.12.01` publishes version `2025.12.01`.
 
 ## Contributing
 
