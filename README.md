@@ -1,4 +1,4 @@
-# Lscythe Version Catalogs
+# Gradle Version Catalogs
 
 [![Main CI](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/ci.yml)
 [![Security](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml/badge.svg)](https://github.com/lscythe/gradle-version-catalogs/actions/workflows/security.yml)
