@@ -9,6 +9,7 @@ navigation = "2.9.1"
 
 [libraries]
 # Gradle Plugin
+gradle-compose = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
 gradle-compose-compiler = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 # Animation
 animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose" }
