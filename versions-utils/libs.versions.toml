@@ -45,6 +45,9 @@ junit5 = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit5" }
 junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
 junit5-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
 kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-assertions-json = { module = "io.kotest:kotest-assertions-json", version.ref = "kotest" }
+kotest-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
+kotest-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
 kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
@@ -109,6 +112,12 @@ kotest = [
     "kotest-property",
     "kotest-runner",
 ]
+kotest-multiplatform = [
+    "kotest-assertions",
+    "kotest-datatest",
+    "kotest-engine",
+    "kotest-property",
+]
 ktor-client-android = [
     "ktor-client-content-negotiation",
     "ktor-client-core",
@@ -166,6 +175,7 @@ testing-jvm = [
 dependency-guard = { id = "com.dropbox.dependency-guard", version.ref = "dependency-guard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
